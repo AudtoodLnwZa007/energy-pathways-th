@@ -3,11 +3,11 @@ import { ArrowRight, BarChart3, Database, GitBranch, LineChart, Sparkles } from 
 import { motion } from "framer-motion";
 import {
   getHistorical,
-  rowAt,
   renewableShare,
   totalGeneration,
   DATA_SOURCES,
 } from "@/lib/energy-data";
+import { rowAt } from "@/components/charts";
 
 export const Route = createFileRoute("/")({
   head: () => ({
