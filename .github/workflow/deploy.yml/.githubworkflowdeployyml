@@ -1,4 +1,4 @@
-name: Deploy Static Content to Pages
+name: Deploy Vite Site to Pages
 
 on:
   push:
@@ -15,22 +15,33 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps: deployment.outputs.page_url }}
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: node-actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # เลือกโฟลเดอร์ที่มีไฟล์ index.html ของคุณ 
-          # ถ้าไฟล์อยู่ที่หน้าแรกสุดเลย ให้ใส่เป็น "."
-          path: '.'
+          # ปกติ Vite จะ build ไฟล์ไว้ในโฟลเดอร์ dist
+          path: './dist'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
