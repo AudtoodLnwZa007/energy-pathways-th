@@ -39,7 +39,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # ชี้ไปที่โฟลเดอร์ dist ที่ Vite build ออกมา
           path: './dist'
 
       - name: Deploy to GitHub Pages
