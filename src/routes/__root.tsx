@@ -30,14 +30,14 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Post-Oil Futures Lab — ศูนย์ข้อมูลพลังงานเชิงพยากรณ์ | Track C" },
+      { title: "Post-Oil Futures — จำลองการใช้พลังงานสะอาด100% | Track C" },
       {
         name: "description",
         content:
           "แดชบอร์ดข้อมูลและฉากทัศน์การเปลี่ยนผ่านพลังงานของประเทศไทย ตั้งแต่ปี 1900 จนถึงปี 2035 อ้างอิง DOEB, EIA, OWID และ Ember",
       },
       { name: "author", content: "Post-Oil Futures Lab — Track C" },
-      { property: "og:title", content: "Post-Oil Futures Lab — ศูนย์ข้อมูลพลังงานเชิงพยากรณ์" },
+      { property: "og:title", content: "Post-Oil Futures — จำลองการใช้พลังงานสะอาด100% | Track C" },
       {
         property: "og:description",
         content:
@@ -45,6 +45,12 @@ export const Route = createRootRoute({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Post-Oil Futures — จำลองการใช้พลังงานสะอาด100% | Track C" },
+      { name: "description", content: "Post-Oil Futures Lab is an interactive web dashboard for visualizing energy statistics." },
+      { property: "og:description", content: "Post-Oil Futures Lab is an interactive web dashboard for visualizing energy statistics." },
+      { name: "twitter:description", content: "Post-Oil Futures Lab is an interactive web dashboard for visualizing energy statistics." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fa0a48ad-aaa6-4a72-8cff-68107939a5f9/id-preview-b40c9cc9--d74e9480-3b01-472e-add5-fda5c2129b78.lovable.app-1776790435568.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fa0a48ad-aaa6-4a72-8cff-68107939a5f9/id-preview-b40c9cc9--d74e9480-3b01-472e-add5-fda5c2129b78.lovable.app-1776790435568.png" },
     ],
     links: [{ rel: "stylesheet", href: appCss }],
   }),
