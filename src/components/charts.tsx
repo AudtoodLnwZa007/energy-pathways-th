@@ -107,9 +107,9 @@ export function EnergyMixChart({
               fontSize: 12,
             }}
             labelFormatter={(label) => `ปี ค.ศ. ${label}`}
-            formatter={(val: number, name: string) => [
-              mode === "share" ? `${val.toFixed(1)}%` : `${val.toFixed(1)} TWh`,
-              ENERGY_LABELS_TH[name as EnergySource] ?? name,
+            formatter={(val, name) => [
+              mode === "share" ? `${Number(val).toFixed(1)}%` : `${Number(val).toFixed(1)} TWh`,
+              ENERGY_LABELS_TH[name as EnergySource] ?? String(name),
             ]}
           />
           <Legend
@@ -197,7 +197,7 @@ export function RenewableShareChart({
               fontSize: 12,
             }}
             labelFormatter={(label) => `ปี ค.ศ. ${label}`}
-            formatter={(val: number) => `${val.toFixed(1)}%`}
+            formatter={(val) => `${Number(val).toFixed(1)}%`}
           />
           <Legend wrapperStyle={{ fontSize: 12 }} />
           {endYear >= 2024 && startYear <= 2024 && (
@@ -264,7 +264,7 @@ export function CO2Chart({ scenario, startYear, endYear }: CO2ChartProps) {
               fontSize: 12,
             }}
             labelFormatter={(label) => `ปี ค.ศ. ${label}`}
-            formatter={(val: number) => [`${val.toFixed(1)} ล้านตัน`, "CO₂"]}
+            formatter={(val) => [`${Number(val).toFixed(1)} ล้านตัน`, "CO₂"]}
           />
           {endYear >= 2024 && startYear <= 2024 && (
             <ReferenceLine x={2024} stroke="var(--gov-navy)" strokeDasharray="4 4" />
