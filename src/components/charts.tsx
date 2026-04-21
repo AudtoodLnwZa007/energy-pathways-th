@@ -49,7 +49,7 @@ export function EnergyMixChart({
   visible,
   mode,
 }: EnergyMixChartProps) {
-  const data = useMemo(() => {
+  const data = useMemo<Record<string, number>[]>(() => {
     const rows = getSeries(scenario).filter(
       (r) => r.year >= startYear && r.year <= endYear,
     );
@@ -63,7 +63,17 @@ export function EnergyMixChart({
         return out;
       });
     }
-    return rows;
+    return rows.map((r) => ({
+      year: r.year,
+      coal: r.coal,
+      oil: r.oil,
+      gas: r.gas,
+      hydro: r.hydro,
+      solar: r.solar,
+      wind: r.wind,
+      bio: r.bio,
+      nuclear: r.nuclear,
+    }));
   }, [scenario, startYear, endYear, mode]);
 
   return (
