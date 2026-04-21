@@ -13,5 +13,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/ชื่อ-repo-ของคุณ/',  // ← เพิ่มบรรทัดนี้
+  base: '/energy-pathways-th/',  // ← เพิ่มบรรทัดนี้
 })
